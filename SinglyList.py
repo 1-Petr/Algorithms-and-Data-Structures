@@ -52,24 +52,3 @@ class SinglyList:
             else:
                 r = m - 1
         return -1
-#тест
-L = SinglyList()
-L.push_back(5)
-L.push_back(6)
-L.push_back(7)
-print(L.head.data, L.tail.data, L.count, L.find(3))
-
-L.push_front(4)
-print(L.head.data, L.tail.data, L.count, L.find(6))
-
-L.pop_front()
-print(L.head.data, L.tail.data, L.count)
-
-print(L.find(6))
-print(L.find(99))
-
-L.pop_front()
-L.pop_front()
-L.pop_front()
-print(L.head, L.tail, L.count)
-print(L.pop_front())
