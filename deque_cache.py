@@ -66,13 +66,13 @@ def test(name, func):
 d = Deque(3)
 for x in [1, 2, 3, 4]:
     d.push_back(x)
-print("Набор 1:", d.items)
+print(f"Набор 1: {d.items}")
 # Набор 2: переполнение через push_front
 d = Deque(3)
 for x in [1, 2, 3]:
     d.push_back(x)
 d.push_front(0)
-print("Набор 2:", d.items)
+print(f"Набор 2: {d.items}")
 # Набор 3: пустой дек
 d = Deque(3)
 test("Набор 3, pop_front", d.pop_front)
@@ -85,4 +85,4 @@ test("Набор 4, размер 'abc'", lambda: Deque("abc"))
 c = Cache(3)
 for x in [1, 2, 3, 1, 4, 2, 5]:
     c.request(x)
-print("Набор 5:", c.buffer.items, "hits =", c.hits, "misses =", c.misses)
+print(f"Набор 5:{c.buffer.items}; hits = {c.hits}; misses = {c.misses}")
