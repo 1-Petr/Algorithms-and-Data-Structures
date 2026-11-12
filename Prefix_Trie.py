@@ -30,3 +30,17 @@ class Trie:
             return False
         node.is_end = False
         return True
+    def autocomplete(self, prefix: str) -> list[str]:
+        node = self.root
+        for char in prefix:
+            if char not in node.children:
+                return []
+            node = node.children[char]
+        result = []
+        def dfs(current, current_word):
+            if current.is_end:
+                result.append(current_word)
+            for char, child in current.children.items():
+                dfs(child, current_word + char)
+        dfs(node, prefix)
+        return result
